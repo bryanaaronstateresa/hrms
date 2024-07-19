@@ -19,6 +19,7 @@
   "section_break_nngy",
   "company",
   "department",
+  "company_logo",
   "column_break_dxpv",
   "employment_type",
   "location",
@@ -250,12 +251,19 @@
    "fieldname": "publish_applications_received",
    "fieldtype": "Check",
    "label": "Publish Applications Received"
+  },
+  {
+   "fetch_from": "company.company_logo",
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company logo"
   }
  ],
  "icon": "fa fa-bookmark",
  "idx": 1,
+ "image_field": "company_logo",
  "links": [],
- "modified": "2024-04-01 11:32:47.167232",
+ "modified": "2024-07-19 15:28:36.720186",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Opening",

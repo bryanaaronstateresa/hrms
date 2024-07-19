@@ -11,25 +11,25 @@
  "engine": "InnoDB",
  "field_order": [
   "details_section",
+  "user",
   "applicant_name",
   "email_id",
   "phone_number",
-  "country",
   "column_break_3",
   "job_title",
   "designation",
+  "country",
   "status",
   "source_and_rating_section",
   "source",
-  "source_name",
   "employee_referral",
   "column_break_13",
+  "source_name",
   "applicant_rating",
   "section_break_6",
   "notes",
   "cover_letter",
   "resume_attachment",
-  "resume_link",
   "section_break_16",
   "currency",
   "column_break_18",
@@ -39,6 +39,7 @@
  "fields": [
   {
    "bold": 1,
+   "fetch_from": "user.full_name",
    "fieldname": "applicant_name",
    "fieldtype": "Data",
    "in_global_search": 1,
@@ -47,6 +48,7 @@
   },
   {
    "bold": 1,
+   "fetch_from": "user.email",
    "fieldname": "email_id",
    "fieldtype": "Data",
    "label": "Email Address",
@@ -54,6 +56,7 @@
    "reqd": 1
   },
   {
+   "default": "Open",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -94,11 +97,13 @@
    "label": "Resume"
   },
   {
+   "fetch_from": "user.cover_letter",
    "fieldname": "cover_letter",
-   "fieldtype": "Text",
+   "fieldtype": "Attach",
    "label": "Cover Letter"
   },
   {
+   "fetch_from": "user.resume",
    "fieldname": "resume_attachment",
    "fieldtype": "Attach",
    "label": "Resume Attachment"
@@ -110,21 +115,18 @@
    "read_only": 1
   },
   {
+   "fetch_from": "user.mobile_no",
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "label": "Phone Number",
    "options": "Phone"
   },
   {
+   "fetch_from": "user.location",
    "fieldname": "country",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Country",
    "options": "Country"
-  },
-  {
-   "fieldname": "resume_link",
-   "fieldtype": "Data",
-   "label": "Resume Link"
   },
   {
    "fieldname": "applicant_rating",
@@ -188,13 +190,20 @@
    "fieldtype": "Link",
    "label": "Designation",
    "options": "Designation"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-user",
  "idx": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-27 13:09:56.340279",
+ "modified": "2024-07-19 13:12:48.844682",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Applicant",
