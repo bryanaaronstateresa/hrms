@@ -11,6 +11,8 @@
   "job_details_section",
   "job_title",
   "designation",
+  "skills",
+  "number_of_employee",
   "column_break_5",
   "status",
   "posted_on",
@@ -254,16 +256,30 @@
   },
   {
    "fetch_from": "company.company_logo",
+   "fetch_if_empty": 1,
    "fieldname": "company_logo",
    "fieldtype": "Attach Image",
    "label": "Company logo"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Data",
+   "label": "Skills"
+  },
+  {
+   "fetch_from": "company.number_of_employee",
+   "fetch_if_empty": 1,
+   "fieldname": "number_of_employee",
+   "fieldtype": "Data",
+   "label": "Number of Employee",
+   "read_only": 1
   }
  ],
  "icon": "fa fa-bookmark",
  "idx": 1,
  "image_field": "company_logo",
  "links": [],
- "modified": "2024-07-19 15:28:36.720186",
+ "modified": "2024-07-21 22:30:57.469647",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Opening",
@@ -286,6 +302,7 @@
    "role": "Guest"
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "ASC",
  "states": [
@@ -298,5 +315,6 @@
    "title": "Closed"
   }
  ],
- "title_field": "job_title"
+ "title_field": "job_title",
+ "translated_doctype": 1
 }
